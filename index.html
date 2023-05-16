@@ -1,0 +1,354 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Quiz</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+        input:valid {
+            border: 4px solid rgb(9, 221, 9);
+        }
+        input:invalid {
+            border: 2px solid rgb(236, 89, 89);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>
+            Regex Quiz
+        </h1>
+        <p> 
+            You're a front-end developer working on creating the user interface for a coding community and marketplace. You're requested to validate user input for fields given below using appropriate regex patterns. <br><br>
+            P.S:
+            <ul>
+                <li>Please use hyphen (-) for ranged values.
+                    Example [2-4] instead of [234]</li>
+                <li>For matching expressions, please write lowercase followed by uppercase, followed by numbers and then symbols.
+                Example, [a-zA-Z0-9#] instead of [0-9A-Z#a-z]</li>
+            </ul>
+            Also, there is a <a href="#cheatsheet">cheatsheet</a> at the bottom of the page for quick lookup.
+        </p>
+            
+        <hr>
+    </header>
+    <main>
+    <form>
+        <ol>
+            <li id="q1">
+                <p>
+                    <strong>Username</strong>
+                    <ul>
+                        <li>The username can only contain lowercase letters and numbers. </li>
+                        <li>The username shouldn't be less than 3 characters or more than 12 characters long.</li>
+                    </ul>
+                </p>
+
+                <label for="q1val">Value: </label>
+                <input id="q1val" type="text" size="15"
+                placeholder="Enter value here" 
+                title="Enter a value that matches above constraints" required
+                pattern="[a-z0-9]{3,12}">
+
+                <label for="q1reg">Regex:</label>
+                <input id="q1reg" type="text" size="50"
+                placeholder="Enter regex here" 
+                title="See footer for answer" 
+                required 
+                pattern="\[a-z0-9\]\{3,12\}">
+                
+                <!-- <a href="#a1">See answer here</a> -->
+            </li>
+
+            <li id="q2">
+                <p>
+                    <strong>Nickname</strong> 
+                    <ul>
+                        <li>The name can only contain uppercase or lowercase letters. </li>
+                        <li>The name shouldn't be less than 5 characters or more than 10 characters long.</li>
+                    </ul>
+                </p>
+
+                <label for="q2val">Value: </label>
+                <input id="q2val" type="text" size="15"
+                placeholder="Enter value here" 
+                title="Enter a value that matches above constraints" required
+                pattern="[a-zA-Z]{5,10}" >
+
+                <label for="q2reg">Regex: </label>
+                <input id="q2reg" type="text" size="50"
+                placeholder="Enter regex here" 
+                title="See footer for answer" 
+                required 
+                pattern="\[a-zA-Z\]\{5,10\}" >
+                
+                <!-- <a href="#a2">See answer here</a> -->
+            </li>
+            
+            <li id="q3">
+                <p>
+                    <strong>Age</strong> 
+                    <ul>
+                        <li>Age can only take positive integer value.</li>
+                        <li>Only users between the range of 18 - 99 years old are allowed on the platform. </li>
+                    </ul>
+                </p>
+                
+                <label for="q3val">Value: </label>
+                <input id="q3val" type="text" size="15"
+                placeholder="Enter value here" 
+                title="Enter a value that matches above constraints" required
+                pattern="[1][8-9]|[2-9][0-9]">
+                
+                <label for="q3reg">Regex: </label>
+                <input id="q3reg" type="text" size="50"
+                placeholder="Enter regex here" 
+                title="See footer for answer" 
+                required 
+                pattern="\[1\]\[8-9\]\|\[2-9\]\[0-9\]|\(1\[8-9\]\)\|\[2-9\]\[0-9\]" >
+                
+                <!-- <a href="#a3">See answer here</a> -->
+            </li>
+
+            <li id="q4">
+                <p>
+                    <strong>Email</strong> 
+                    <ul>
+                        <li>The platform can only support email services from either gmail or yahoo.</li>
+                        <li>Gmail allows letters, numbers & periods.</li>
+                        <li>Yahoo allows letters, numbers, periods & underscores.</li>
+                    </ul>
+                </p>
+                
+                <label for="q4val">Value: </label>
+                <input id="q4val" type="text" size="15"
+                placeholder="Enter value here" 
+                title="Enter a value that matches above constraints" required
+                pattern="[a-zA-Z0-9.]+@gmail.com|[a-zA-Z0-9._]+@yahoo.com">
+                
+                <label for="q4reg">Regex: </label>
+                <input id="q4reg" type="text" size="50"
+                placeholder="Enter regex here" 
+                title="See footer for answer" 
+                required 
+                pattern="\[a-zA-Z0-9\.\]\+@gmail\.com\|\[a-zA-Z0-9\._\]\+@yahoo\.com|\[a-zA-Z0-9\._\]\+@yahoo\.com\|\[a-zA-Z0-9\.\]\+@gmail\.com">
+                
+                <!-- <a href="#a4">See answer here</a> -->
+
+            </li>
+
+            <li id="q5">
+                <p>
+                    <strong>Password</strong> 
+                    <ul>
+                        <li>Password should be at least 8 characters long.</li>
+                        <li>Must contain atleast one lowercase letter, atleast one uppercase letter, atleast one number, & atleast one special character.</li>
+                        <li>Special characters inlcude !, @, #, $, %, & </li>
+                    </ul>
+                </p>
+                
+                <label for="q5val">Value: </label>
+                <input id="q5val" type="text" size="15"
+                placeholder="Enter value here" 
+                title="Enter a value that matches above constraints" required
+                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&]).{8,}">
+                
+                <label for="q5reg">Regex: </label>
+                <input id="q5reg" type="text" size="50"
+                placeholder="Enter regex here" 
+                title="See footer for answer" 
+                required 
+                pattern="\(\?=\.\*\[a-z\]\)\(\?=\.\*\[A-Z\]\)\(\?=\.\*\[0-9\]\)\(\?=\.\*\[!@#\$%&\]\)\.\{8,\}">
+                
+                <!-- <a href="#a5">See answer here</a> -->
+            </li>
+
+            <li id="q6">
+                <p>
+                    <strong>Pincode</strong> 
+                    <ul>
+                        <li>Pincode can contain only positive integers</li>
+                        <li>Pincodes must be exactly 6 digits long.</li>
+                    </ul>
+                </p>
+                
+                <label for="q6val">Value: </label>
+                <input id="q6val" type="text" size="15"
+                placeholder="Enter value here" 
+                title="Enter a value that matches above constraints" required
+                pattern="\d{6}">
+                
+                <label for="q6reg">Regex: </label>
+                <input id="q6reg" type="text" size="50"
+                placeholder="Enter regex here" 
+                title="See footer for answer" 
+                required 
+                pattern="\\d\{6\}|\[0-9\]\{6\}">
+                
+                <!-- <a href="#a6">See answer here</a> -->
+            </li>
+
+            <li id="q7">
+                <p>
+                    <strong>URL</strong> 
+                    <ul>
+                        <li>Take the github link from the user.</li>
+                        <li>Github allows letters, numbers and hyphen (-) for username.</li>
+                        <li>Do not forget to include https protocol.</li>
+                    </ul>
+                </p>
+                
+                <label for="q7val">Value: </label>
+                <input id="q7val" type="text" size="15"
+                placeholder="Enter value here" 
+                title="Enter a value that matches above constraints" required
+                pattern="https://github.com/[a-zA-Z0-9-]+" >
+                
+                <label for="q7reg">Regex: </label>
+                <input id="q7reg" type="text" size="50"
+                placeholder="Enter regex here" 
+                title="See footer for answer" 
+                required 
+                pattern="https:\/\/github\.com\/\[a-zA-Z0-9-\]\+">
+                
+                <!-- <a href="#a7">See answer here</a> -->
+            </li>
+
+            <li id="q8">
+                <p>
+                    <strong>Credit Card</strong> 
+                    <ul>
+                        <li>Only mastercard is allowed.</li>
+                        <li>Mastercard starts with 5, followed by 15 digits</li>
+                        <li>Both formats below works:
+                            <ul>
+                                <li>5111 1111 1111 1111</li>
+                                <li>5123543254325432</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+                
+                <label for="q8val">Value: </label>
+                <input id="q8val" type="text" size="15"
+                placeholder="Enter value here" 
+                title="Enter a value that matches above constraints" required
+                pattern="(5[0-9]{3})\s?[0-9]{4}\s?[0-9]{4}\s?[0-9]{4}">
+                
+                <label for="q8reg">Regex </label>
+                <input id="q8reg" type="text" size="50"
+                placeholder="Enter regex here" 
+                title="See footer for answer" 
+                required 
+                pattern="\(5\[0-9\]\{3\}\)\\s\?\[0-9\]\{4\}\\s\?\[0-9\]\{4\}\\s\?\[0-9\]\{4\}|\(5\[0-9\]\{15\}\)|\[5\]\[0-9\]\{15\}|\[5\]\\d\{15\}">
+                
+                <!-- <a href="#a8">See answer here</a> -->
+            </li>
+
+            <li id="q9">
+                <p>
+                    <strong>Credit Card Expiry</strong> 
+                    <ul>
+                        <li>Input should only contain month and year information in MM/YY format</li>
+                        <li>The expiration month must be either current month or future months remaining in current year</li>
+                        <li>The expiration year must be either current year or future years</li>
+                    </ul>
+                </p>
+
+                <label for="q9val">Value: </label>
+                <input id="q9val" type="text" size="15"
+                placeholder="Enter value here" 
+                title="Enter a value that matches above constraints" required
+                pattern="(0[5-9]|1[0-2])\/(2[3-9]|[3-9][0-9])">
+                
+                <label for="q9reg">Regex: </label>
+                <input id="q9reg" type="text" size="50"
+                placeholder="Enter regex here" 
+                title="See footer for answer" 
+                required 
+                pattern="\(0\[5-9\]\|1\[0-2\]\)\\\/\(2\[3-9\]\|\[3-9\]\[0-9\]\)">
+
+                <!-- <a href="#a9">See answer here</a> -->
+            </li>
+
+            <li id="q10">
+                <p>
+                    <strong>Mobile Phone</strong> 
+                    <ul>
+                        <li>Accepts only Indian phone numbers</li>
+                        <li>Input can be in the format: 
+                            <ul>
+                                <li>Separated by hyphen: +91-12345-56789</li>
+                                <li>Separated by whitespace: +91 12345 56789</li>
+                                <li>No space: +911234556789</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+                
+                <label for="q10val">Value: </label>
+                <input id="q10val" type="text" size="15"
+                placeholder="Enter value here" 
+                title="Enter a value that matches above constraints" required
+                pattern="\+[0-9]{2}\s?-?[0-9]{5}\s?-?[0-9]{5}">
+                
+                <label for="q10val">Regex: </label>
+                <input id="q10reg" type="text" size="50"
+                placeholder="Enter regex here" 
+                title="See footer for answer" 
+                required 
+                pattern="\\\+\[0-9\]\{2\}\\s\?-\?\[0-9\]\{5\}\\s\?-\?\[0-9\]\{5\}|\\\+\\d\{2\}\\s\?-\?\\d\{5\}\\s\?-\?\\d\{5\}|\\\+\[0-9\]\{2\}\[-\\s\]\?\[0-9\]\{5\}\[-\\s\]\?\[0-9\]\{5\}|\\\+\\d\{2\}\[-\\s\]\?\\d\{5\}\[-\\s\]\?\\d\{5\}">
+                
+                <!-- <a href="#a10">See answer here</a> -->
+            </li>
+        </ol>
+        <button type="submit">Save</button>
+    </form>
+        <hr>
+
+        <article id="cheatsheet">
+            <h3>Regex cheatsheet</h3>
+            <ul>
+                <li><strong>`\` </strong>backlash is used for escaping special character sequences.</li>
+                <li><strong>`. ^ $ ? ( ) + * | \ [ ] { }` </strong>These are some special characters in regex, use `\` to escape them.</li>
+                <li><strong>`.` </strong>Matches any character.</li>
+                <li><strong>`+` </strong>Matches one or more occurences of the preceding pattern.</li>
+                <li><strong>`*` </strong>Matches zero or more occurences of the preceding pattern.</li>
+                <li><strong>`\d` </strong>Matches digits, similar to [0-9].</li>
+                <li><strong>`\s?` </strong>Check for optional whitespace character.</li>
+                <li><strong>`|` </strong>OR operator allows you check multiple patterns at once.</li>
+                <li><strong>`(`</strong> and <strong>`)` </strong>Parenthesis creates capture groups.</li>
+                <li><strong>`[`</strong> and <strong>`]` </strong>Square brackets matches any single character within the brackets.</li>
+                <li><strong>`{`</strong> and <strong>`}` </strong>Curly braces specifies the number of occurences of the preceding pattern.</li>
+                <li><strong>`?=` </strong>Checks further only if condition after ?= is satisfied. Example, (?=.*[a-z]) ensures that there is atleast one lowercase character.</li>
+            </ul>
+            <a href="#header">Go back</a>
+        </article>
+
+        <hr>
+        
+        <aside>
+            <h3>Answers</h3>
+            <ol>
+                <li id="a1">[a-z0-9]{3,12}<a href="#q1">&#128281</a></li>
+                <li id="a2">[a-zA-Z]{5,10}<a href="#q2">&#128281</a></li>
+                <li id="a3">[1][8-9]|[2-9][0-9]<a href="#q3">&#128281</a></li>
+                <li id="a4">[a-zA-Z0-9.]+@gmail.com|[a-zA-Z0-9._]+@yahoo.com<a href="#q4">&#128281</a></li>
+                <li id="a5">(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&]).{8,}<a href="#q5">&#128281</a></li>
+                <li id="a6">[0-9]{6} OR \d{6}<a href="#q6">&#128281</a></li>
+                <li id="a7">https://github.com/[a-zA-Z0-9-]+<a href="#q7">&#128281</a></li>
+                <li id="a8">[5][0-9]{15}<a href="#q8">&#128281</a></li>
+                <li id="a9">(0[5-9]|1[0-2])\/(2[3-9]|[3-9][0-9])<a href="#q9">&#128281</a></li>
+                <li id="a10">\+[0-9]{2}\s?-?[0-9]{5}\s?-?[0-9]{5}<a href="#q10">&#128281</a></li>
+            </ol>
+        </aside>
+    </main>
+    <footer>
+        <hr>
+        <p>This is a simple quiz on regex created using HTML form elements and client-side validation.</p>
+    </footer>
+</body>
+</html>
