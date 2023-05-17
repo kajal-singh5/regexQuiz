@@ -262,14 +262,14 @@
                 <input id="q9val" type="text" size="15"
                 placeholder="Enter value here" 
                 title="Enter a value that matches above constraints" required
-                pattern="(0[5-9]|1[0-2])\/(2[3-9]|[3-9][0-9])">
+                pattern="(0[5-9]|1[0-2])\/23|(0[1-9]|1[0-2])\/(2[4-9]|[3-9][0-9])">
                 
                 <label for="q9reg">Regex: </label>
                 <input id="q9reg" type="text" size="50"
                 placeholder="Enter regex here" 
                 title="See footer for answer" 
                 required 
-                pattern="\(0\[5-9\]\|1\[0-2\]\)\\\/\(2\[3-9\]\|\[3-9\]\[0-9\]\)">
+                pattern="\(0\[5-9\]\|1\[0-2\]\)\\\/23\|\(0\[1-9\]\|1\[0-2\]\)\\\/\(2\[4-9\]\|\[3-9\]\[0-9\]\)">
 
                 <!-- <a href="#a9">See answer here</a> -->
             </li>
@@ -341,7 +341,7 @@
                 <li id="a6">[0-9]{6} OR \d{6}<a href="#q6">&#128281</a></li>
                 <li id="a7">https://github.com/[a-zA-Z0-9-]+<a href="#q7">&#128281</a></li>
                 <li id="a8">[5][0-9]{15}<a href="#q8">&#128281</a></li>
-                <li id="a9">(0[5-9]|1[0-2])\/(2[3-9]|[3-9][0-9])<a href="#q9">&#128281</a></li>
+                <li id="a9">(0[5-9]|1[0-2])\/23|(0[1-9]|1[0-2])\/(2[4-9]|[3-9][0-9])<a href="#q9">&#128281</a></li>
                 <li id="a10">\+[0-9]{2}\s?-?[0-9]{5}\s?-?[0-9]{5}<a href="#q10">&#128281</a></li>
             </ol>
         </aside>
