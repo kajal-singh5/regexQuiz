@@ -17,6 +17,24 @@
         input:invalid {
             border: 2px solid rgb(236, 89, 89);
         }
+        #questions {
+            display: flex;
+            justify-content: space-between;
+        }
+        #cheatsheet {
+            position: sticky;
+            top: 0;
+            align-self: flex-start;
+            max-width: 500px;
+        }
+        @media (max-width: 1000px) {
+            #questions {
+                flex-direction: column;
+            }
+            #cheatsheet {
+                position: static;
+            }
+        }
     </style>
 </head>
 <body>
@@ -39,6 +57,7 @@
         <hr>
     </header>
     <main>
+        <div id="questions">
     <form>
         <ol>
             <li id="q1">
@@ -344,8 +363,8 @@
             </li>
         </ol>
         <button type="submit">Save</button>
-    </form>
         <hr>
+    </form>
 
         <article id="cheatsheet">
             <h3>Regex cheatsheet</h3>
@@ -364,9 +383,9 @@
                 <li><strong>`?=` </strong>Checks further only if condition after ?= is satisfied. Example, (?=.*[a-z]) ensures that there is atleast one lowercase character.</li>
             </ul>
             <a href="#header">Go back</a>
+            <hr>
         </article>
-
-        <hr>
+    </div>
         
         <aside>
             <h3>Answers</h3>
