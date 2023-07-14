@@ -1,0 +1,208 @@
+*, ::before, ::after, a {
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    background-color: #3A3B50;
+    font-family: 'Nunito Sans', sans-serif;
+    color: whitesmoke;
+    font-size: 18px;
+}
+
+hr {
+    width: 100%;
+    border: 2px solid salmon;
+    border-radius: 50%;
+    margin-top: 3em;
+    margin-bottom: 5em;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.nav,
+.footer {
+    height: 5rem;
+    width: 100%;
+    background-color: #6D946B;
+    text-align: center;
+    line-height: 5rem;
+}
+
+.nav .ul {
+    width: 100%;
+    height: 100%;
+
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.5rem 2rem;
+
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+.nav li:hover,
+.nav li:focus {
+    color: salmon;
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+}
+
+.container {
+    margin: 0 5rem;
+}
+
+.intro {
+    /* display */
+    padding: 2em;
+    margin-top: 1em;
+
+    /* content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+}
+
+.h1 {
+    font-size: 2.5em;
+}
+
+.h3 {
+    font-size: 2em;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5em;
+    padding: 0 5em;
+    width: 100%;
+}
+
+.form > ol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5em;
+
+    width: 70%;
+
+    list-style-type: none;
+}
+
+.form > ol > li {
+    width: 100%;
+}
+
+.form ol li p {
+    font-size: 1.5em;
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+label {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 0.5em;
+}
+
+input {
+    display: block;
+    width: 100%;
+    height: 3em;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 0.5em 0 1em 0;
+}
+
+button {
+    width: 50%;
+    height: 3em;
+    
+    border-radius: 10px;
+    border: 2px solid ;
+    background-color: whitesmoke;
+    
+    color: #313829;
+    font-family: 'Nunito Sans';
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: background-color 0.25s linear;
+}
+
+button:hover,
+button:focus {
+    background-color: #6D946B;
+}
+
+li > ol {
+    list-style-type: lower-latin;
+}
+
+input:valid {
+    border: 4px solid rgb(9, 221, 9);
+}
+
+input:invalid {
+    border: 2px solid rgb(236, 89, 89);
+}
+
+.cheatsheet,
+.answers {
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 100%;
+}
+
+.cheatsheet>ul,
+.answers>ol {
+    margin-top: 3em;
+    margin-bottom: 3em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.25em;
+}
+
+.answers>ol li span {
+    color: transparent;
+    text-shadow: 0 0 10px whitesmoke;
+    user-select: none;
+    transition: color 0.5s ease-in;
+}
+
+.answers>ol li:hover span {
+    color: inherit;
+    text-shadow: initial;
+    user-select: initial;
+}
