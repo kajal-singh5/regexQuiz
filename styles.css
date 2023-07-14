@@ -206,3 +206,24 @@ input:invalid {
     text-shadow: initial;
     user-select: initial;
 }
+
+#questions {
+    display: flex;
+    justify-content: space-between;
+}
+
+#cheatsheet {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    max-width: 500px;
+}
+
+@media (max-width: 1000px) {
+    #questions {
+        flex-direction: column;
+    }
+    #cheatsheet {
+        position: static;
+    }
+}
