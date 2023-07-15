@@ -1,3 +1,4 @@
+/* || GENERAL STYLES */
 *, ::before, ::after, a {
     box-sizing: border-box;
     margin: 0;
@@ -20,10 +21,40 @@ hr {
     margin-bottom: 5em;
 }
 
+.h1 {
+    font-size: 2.5rem;
+}
+
+.h2 {
+    font-size: 2rem;
+}
+
+.h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 0.5em;
+}
+
+/* || NAVIGATION */
 .header {
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 9999;
+}
+
+.check,
+.checkbtn {
+    display: none;
+}
+
+.checkbtn {
+    width: 100%;
+    height: 5rem;
+    text-align: end;
+    padding: 1rem;
+    position: relative;
     z-index: 9999;
 }
 
@@ -45,24 +76,73 @@ hr {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     padding: 0.5rem 2rem;
-
-    color: whitesmoke;
-    font-size: 1.5rem;
 }
 
-.nav li:hover,
-.nav li:focus {
+.nav a {
+    color: whitesmoke;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    transition: color 0.2s ease-in;
+}
+
+.nav a:hover,
+.nav a:focus {
     color: salmon;
     text-decoration: underline;
     text-underline-offset: 0.5em;
 }
 
+@media (max-width: 1062px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 800px) {
+    .checkbtn {
+        display: block;
+    }
+
+    .nav .ul  {
+        display: none;
+
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: #2c3e50;
+        top: 0;
+        left: 0;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    .nav a {
+        font-size: 2rem;
+    }
+
+    .check:checked ~ ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 0.5rem 2rem;
+    }
+
+    .check:checked + label.checkbtn > .open {
+        transition: transform 0.5s ease-in-out;
+        transform: rotate(90deg);
+    }
+}
+
+/* || MAIN CONTENT */
 .container {
     margin: 0 5rem;
 }
 
+/* || INTRO */
 .intro {
     /* display */
     padding: 2em;
@@ -76,14 +156,28 @@ hr {
     gap: 2em;
 }
 
-.h1 {
-    font-size: 2.5em;
+/* form with cheatsheet */
+.display {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5em;
+    width: 100%;
 }
 
-.h3 {
-    font-size: 2em;
+.display .form {
+    width: 60%;
 }
 
+.display .cheatsheet {
+    width: 40%;
+    height: 100%;
+    position: sticky;
+    top: 20%;
+}
+
+/* form */
 .form {
     display: flex;
     flex-direction: column;
@@ -115,12 +209,6 @@ hr {
     text-underline-offset: 0.5em;
     margin-bottom: 1em;
     margin-top: 1em;
-}
-
-label {
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    padding: 0.5em;
 }
 
 input {
@@ -170,6 +258,7 @@ input:invalid {
     border: 2px solid rgb(236, 89, 89);
 }
 
+/* cheatsheet and answers */
 .cheatsheet,
 .answers {
     padding: 0 2em;
@@ -206,26 +295,7 @@ input:invalid {
     user-select: initial;
 }
 
-.display {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 5em;
-    width: 100%;
-}
-
-.display .form {
-    width: 60%;
-}
-
-.display .cheatsheet {
-    width: 40%;
-    height: 100%;
-    position: sticky;
-    top: 20%;
-}
-
+/* || FOOTER */
 .footer {
     width: 100%;
     background-color: #6D946B;
@@ -234,6 +304,7 @@ input:invalid {
     padding: 1em;
 }
 
+/* || MEDIA QUERY */
 @media (max-width: 1000px) {
     .display {
         flex-direction: column;
